@@ -1,11 +1,18 @@
 import random
-word=["apple","banana","grapes","mango","chickoo","strawberry"]
-choosen_word=random.choice(word)
+word_list=["apple","banana","grapes","mango","chickoo","strawberry"]
+choosen_word=random.choice(word_list)
 print(choosen_word)
+placeholder=""
+word_length=len(choosen_word)
+for position in range(word_length):
+    placeholder +="_"
+print(placeholder)
 guess=input("guess the letter: ").lower()
-print(guess)
+
+display = ""
 for letter in choosen_word:
     if letter==guess:
-        print("correct")
+        display += letter
     else:
-        print("incorrect")
+        display += "_"
+print(display)
